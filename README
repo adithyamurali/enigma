@@ -1,0 +1,136 @@
+Welcome to the Enigma Machine simulator! The Engima machine was an
+electro-mechanical rotor cipher tool used extensively in WW2
+for encryting and decrypting secret messages. This project, which
+was coded for the data structures course at UC Berkeley, simulates
+a enigma machine with 5 rotors.
+
+EXAMPLE
+-------
+
+The first line starting with a * represents the command & rotor
+configuration. The sample below is a poem by Mark Twain.
+
+Input:
+* B BETA III IV I BLEY
+The Bombola faints in the hot Bowral tree
+Where fierce Mullengudgerys smothering fires
+Far from the breezes of Coolgardie
+Burn ghastly and blue as the day expires
+And Murriwillumba complaineth in song
+For the garlanded bowers of Woolloomooloo
+And the Ballarat Fly and the lone Wollongong
+They dream of the gardens of Jamberoo
+The wallabi sighs for the Murrubidgee
+For the velvety sod of the Munno Parah
+Where the waters of healing from Muloowurtie
+Flow dim in the gloaming by Yaranyackah
+The Koppio sorrows for lost Wolloway
+And sigheth in secret for Murrurundi
+The Whangeroo wombat lamenteth the day
+That made him an exile from Jerrilderie
+
+Output:
+LVMYD OOWCU SSDZV FDHFR FIMAY JRTIV ZFMK
+AWSEX AKLEY PYZKA DIHWL MXGTI AKCMQ KLLQC CRPBL
+TRJPG PDELS XDPRX KFVXJ RENYH XOGC
+TNIZJ SRNAZ QFCFL TEXBK ZKQZK CJVDN CZU
+KFHFA CZOBC MESQO IAAGO FIWJG QAWUA VFR
+AEDAT KQOHE HQFMZ KYNMT AWZUY RWKFX UGYOG Q
+TXRDG BQNNT IFOAO BBWKO IVKXV UVZMB YZFVV AU
+LSSFR AIPYA YHBDN XPJWA TYQDI IYPVD D
+HRNPG MBCZQ AKKUV EFESJ RCGHU YPJPZ WV
+QIWWR GKSHA NPTXP RGGXF IQGQW RAQVW S
+RUJVB MUNCE FSTBT TPSSY NVAXQ JGQJO BUJMD MGD
+QWPNN UXVVZ JGUPL SODHI HILOV PQWXK PZL
+QJZJP XQMTE AYIBI JRVCO FYISE YKKPP A
+IRGOO USNWM TRZXE AZIZD KCSIO IIGRF J
+FNQPX DRDIM CDECF IIANU CAWUG HDIWU EFH
+IXDXU BGBQZ FIWPV XRXKA LIGJC SEYOH OBI
+HYIHL BKOML IUYDC MPPSF SZW
+
+Note: If the output is inserted back as the input
+with a same rotor config, it would produce
+the same output as Mark Twain's poem.
+
+THEBO MBOLA FAINT SINTH EHOTB OWRAL TREE
+WHERE FIERC EMULL ENGUD GERYS SMOTH ERING FIRES
+FARFR OMTHE BREEZ ESOFC OOLGA RDIE
+BURNG HASTL YANDB LUEAS THEDA YEXPI RES
+ANDMU RRIWI LLUMB ACOMP LAINE THINS ONG
+FORTH EGARL ANDED BOWER SOFWO OLLOO MOOLO O
+ANDTH EBALL ARATF LYAND THELO NEWOL LONGO NG
+THEYD REAMO FTHEG ARDEN SOFJA MBERO O
+THEWA LLABI SIGHS FORTH EMURR UBIDG EE
+FORTH EVELV ETYSO DOFTH EMUNN OPARA H
+WHERE THEWA TERSO FHEAL INGFR OMMUL OOWUR TIE
+FLOWD IMINT HEGLO AMING BYYAR ANYAC KAH
+THEKO PPIOS ORROW SFORL OSTWO LLOWA Y
+ANDSI GHETH INSEC RETFO RMURR URUND I
+THEWH ANGER OOWOM BATLA MENTE THTHE DAY
+THATM ADEHI MANEX ILEFR OMJER RILDE RIE
+
+
+FILES
+-----
+
+The following command runs the program:
+
+     java enigma.Main
+
+Files in this distribution:
+
+Makefile
+          A configuration file for the 'gmake' program.  This allows
+          some common tasks: compiling your program, running
+          tests and performing style checks on it, cleaning up
+          unneeded files.  See the comment at the top of the file for 
+          details.
+test-correct
+          A bash test script for testing correct inputs to the enigma program.
+test-error
+          A bash test script for testing erroneous inputs to the enigma program.
+
+enigma    Directory containing the enigma package:
+
+  enigma/Main.java
+              Contains the main procedure: enigma.Main.main.
+  enigma/Machine.java
+              A suggested skeleton file for objects modeling Enigma
+              machines.
+  enigma/Rotor.java
+              A suggested skeleton file for objects modeling rotors.
+  enigma/Reflector.java
+              A suggested skeleton file for objects modeling reflectors.
+  enigma/PermutationData.java
+              Static data describing the Enigma rotors and reflectors.
+              
+tests      Directory for test files.
+              Contains files *.inp, *.out, and *.err, intended as test input
+              files, expected output files, and erroneous input files
+              for the enigma program.
+              The Makefile is set up so that 'gmake check' runs each
+              .inp file through your program and compares the
+              results to the corresponding .out file.  It also runs each
+              .err file through your program and checks that the program 
+              reports an error according to the project specification.
+
+   tests/trivial.in, tests/trivial.out
+              Sample test file input and output.
+
+ROTOR CONFIGURATION
+-------------------
+
+Example:
+* B BETA III IV I BLEY
+
+- 2 reflecting rotors, labeled "B" and "C", of which 1 will be used
+in any given configuration as the leftmost rotor.
+- 2 non-moving rotors "GAMMA" and "BETA", of which 1 will be used in any
+configuration, as the fourth-from-right rotor
+- 8 rotors labeled I–VIII, of which 3 will be
+used in any given configuration as the rightmost rotors
+- The last word specifies the initial alphabet position of each rotor
+in order.
+
+
+
